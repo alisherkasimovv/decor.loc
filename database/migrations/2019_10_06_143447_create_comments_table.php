@@ -17,6 +17,7 @@ class CreateCommentsTable extends Migration
             $table->increments('id');
             $table->string('client')->nullable();
             $table->text('text')->nullable();
+            $table->boolean('published')->default(false);
             $table->timestamps();
         });
     }

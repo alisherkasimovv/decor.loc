@@ -2,22 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="92b03f9f-c982-4305-9b64-f4aad31e3510" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/dictionaries/alisherkasimov.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Address.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Category.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Comment.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Credential.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Image.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Member.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/migrations/2019_10_06_113105_create_images_table.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/migrations/2019_10_06_115209_create_categories_table.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/migrations/2019_10_06_133403_create_members_table.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/migrations/2019_10_06_143447_create_comments_table.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/migrations/2019_10_06_144923_create_credentials_table.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/migrations/2019_10_06_175948_create_addresses_table.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/AddressesController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/CategoriesController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/CommentsController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/CredentialController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/DashboardController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/MembersController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/filesystems.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/filesystems.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Comment.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Comment.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2019_10_06_143447_create_comments_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_10_06_143447_create_comments_table.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -162,6 +155,11 @@
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
   </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Dev\OSPanel\domains\decor.loc\app\Http\Controllers\Admin" />
+    </key>
+  </component>
   <component name="RunDashboard">
     <option name="ruleStates">
       <list>
@@ -196,7 +194,8 @@
       <workItem from="1570301910188" duration="282000" />
       <workItem from="1570302334374" duration="142000" />
       <workItem from="1570303565575" duration="525000" />
-      <workItem from="1570357747618" duration="18429000" />
+      <workItem from="1570357747618" duration="19586000" />
+      <workItem from="1570422361210" duration="6367000" />
     </task>
     <servers />
   </component>
@@ -208,7 +207,9 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>

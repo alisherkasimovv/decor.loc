@@ -8,7 +8,8 @@ class Comment extends Model
 {
     protected $fillable = [
         'client',
-        'text'
+        'text',
+        'published'
     ];
 
     public static function add($fields)
@@ -17,6 +18,7 @@ class Comment extends Model
 
         $comment->client = $fields['client'];
         $comment->text = $fields['text'];
+        $comment->published = $fields['published'];
         $comment->save();
     }
 
@@ -24,6 +26,7 @@ class Comment extends Model
     {
         $this->client = $fields['client'];
         $this->text = $fields['text'];
+        $this->published = $fields['published'];
         $this->save();
     }
 
