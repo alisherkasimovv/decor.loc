@@ -13,7 +13,7 @@ return [
     |
     */
 
-    'title' => 'AdminLTE 2',
+    'title' => 'The Decor.uz',
 
     'title_prefix' => '',
 
@@ -30,9 +30,9 @@ return [
     |
     */
 
-    'logo' => '<b>Admin</b>LTE',
+    'logo' => 'The <b>Decor</b>',
 
-    'logo_mini' => '<b>A</b>LT',
+    'logo_mini' => 'The<b>D</b>',
 
     /*
     |--------------------------------------------------------------------------
@@ -45,7 +45,7 @@ return [
     |
     */
 
-    'skin' => 'blue',
+    'skin' => 'purple',
 
     /*
     |--------------------------------------------------------------------------
@@ -128,84 +128,36 @@ return [
     */
 
     'menu' => [
-        [
-            'text' => 'search',
-            'search' => true,
-        ],
         ['header' => 'main_navigation'],
         [
-            'text' => 'blog',
-            'url'  => 'admin/blog',
-            'can'  => 'manage-blog',
+            'text' => 'Go to website',
+            'url'  => '/',
+            'icon' => 'far fa-file-image-o',
         ],
         [
-            'text'        => 'pages',
-            'url'         => 'admin/pages',
-            'icon'        => 'far fa-file',
-            'label'       => 4,
-            'label_color' => 'success',
-        ],
-        ['header' => 'account_settings'],
-        [
-            'text' => 'profile',
-            'url'  => 'admin/settings',
-            'icon' => 'fas fa-fw fa-user',
+            'text'        => 'Credentials',
+            'url'         => 'admin/credentials',
+            'icon'        => 'far fa-file'
         ],
         [
-            'text' => 'change_password',
-            'url'  => 'admin/settings',
-            'icon' => 'fas fa-fw fa-lock',
+            'text'        => 'Categories',
+            'url'         => 'admin/categories',
+            'icon'        => 'far fa-list'
         ],
         [
-            'text'    => 'multilevel',
-            'icon'    => 'fas fa-fw fa-share',
-            'submenu' => [
-                [
-                    'text' => 'level_one',
-                    'url'  => '#',
-                ],
-                [
-                    'text'    => 'level_one',
-                    'url'     => '#',
-                    'submenu' => [
-                        [
-                            'text' => 'level_two',
-                            'url'  => '#',
-                        ],
-                        [
-                            'text'    => 'level_two',
-                            'url'     => '#',
-                            'submenu' => [
-                                [
-                                    'text' => 'level_three',
-                                    'url'  => '#',
-                                ],
-                                [
-                                    'text' => 'level_three',
-                                    'url'  => '#',
-                                ],
-                            ],
-                        ],
-                    ],
-                ],
-                [
-                    'text' => 'level_one',
-                    'url'  => '#',
-                ],
-            ],
-        ],
-        ['header' => 'labels'],
-        [
-            'text'       => 'important',
-            'icon_color' => 'red',
+            'text'        => 'Comments',
+            'url'         => 'admin/comments',
+            'icon'        => 'far fa-file'
         ],
         [
-            'text'       => 'warning',
-            'icon_color' => 'yellow',
+            'text'        => 'Members',
+            'url'         => 'admin/members',
+            'icon'        => 'far fa-file'
         ],
         [
-            'text'       => 'information',
-            'icon_color' => 'aqua',
+            'text'        => 'Addresses',
+            'url'         => 'admin/addresses',
+            'icon'        => 'far fa-file'
         ],
     ],
 

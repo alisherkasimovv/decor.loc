@@ -18,7 +18,7 @@ class Comment extends Model
 
         $comment->client = $fields['client'];
         $comment->text = $fields['text'];
-        $comment->published = $fields['published'];
+        $comment->published = $comment->setPublished($fields['published']);
         $comment->save();
     }
 
@@ -26,7 +26,7 @@ class Comment extends Model
     {
         $this->client = $fields['client'];
         $this->text = $fields['text'];
-        $this->published = $fields['published'];
+        $this->published = $this->setPublished($fields['published']);
         $this->save();
     }
 
@@ -37,5 +37,11 @@ class Comment extends Model
         } catch (\Exception $e) {
             echo $e;
         }
+    }
+
+    private function setPublished($field)
+    {
+        if ($field == 1) return true;
+        return false;
     }
 }

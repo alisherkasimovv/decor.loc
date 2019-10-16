@@ -2,6 +2,7 @@
 
 namespace App;
 
+use Illuminate\Contracts\Filesystem\FileNotFoundException;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Storage;
 
@@ -13,23 +14,37 @@ class Image extends Model
         'image_type'
     ];
 
-    public function images() {
+    public function images()
+    {
         return $this->morphTo();
     }
 
-    public function uploadImage($image, $folder) {
+    /**
+     * Uploading image to file system.
+     *
+     * @param $image
+     * @param $folder
+     * @return string
+     * @throws \Exception
+     */
+    public function uploadImage($image, $folder)
+    {
         if ($image == null) return NULL;
 
         $this->removeImage($image);
         $filename = $this->generateRandomStringName() . '.' . $image->extension();
         $this->url = $image->storeAs('uploads/' . $folder, $filename);
+
+        return $this;
     }
 
-    public function removeImage($image) {
+    public function removeImage($image)
+    {
         if ($image != null) Storage::delete($image);
     }
 
-    private function generateRandomStringName() {
+    private function generateRandomStringName()
+    {
         $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
         $str = '';
         for ($i = 0; $i < 15; $i++) {

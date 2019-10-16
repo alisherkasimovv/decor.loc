@@ -22,7 +22,8 @@ class Address extends Model
         $address->address = $fields['address'];
         $address->phone = $fields['phone'];
         $address->email = $fields['email'];
-        $address->main_office = $address->setMainOffice($fields['main']);
+//        $address->main_office = $address->setMainOffice($fields['main']);
+        $address->save();
     }
 
     public function edit($fields)
@@ -31,7 +32,8 @@ class Address extends Model
         $this->address = $fields['address'];
         $this->phone = $fields['phone'];
         $this->email = $fields['email'];
-        $this->main_office = $this->setMainOffice($fields['main']);
+//        $this->main_office = $this->setMainOffice($fields['main']);
+        $this->save();
     }
 
     public function remove()

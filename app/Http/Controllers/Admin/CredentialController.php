@@ -20,7 +20,7 @@ class CredentialController extends Controller
         return view(
             'admin.credentials.index',
             [
-                'credentials'   => Credential::firstOrFail(1),
+                'credential'   => Credential::where('id', 1)->firstOrFail(),
             ]
         );
     }
@@ -36,7 +36,7 @@ class CredentialController extends Controller
         return view(
             'admin.credentials.edit',
             [
-                'credentials'   => $credential
+                'credential'   => $credential
             ]
         );
     }

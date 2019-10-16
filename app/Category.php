@@ -15,7 +15,6 @@ class Category extends Model
     /*
      * Relations
      */
-
     public function children() {
         return $this->hasMany(self::class, 'parent_id');
     }
@@ -37,9 +36,12 @@ class Category extends Model
 
         if ($fields['images'] != null) {
             foreach ($fields['images'] as $item) {
-                $image = new Image();
-                $image->uploadImage($item, 'categories');
-                $category->images()->save($image);
+                try {
+                    $image = new Image();
+                    $image->uploadImage($item, 'categories');
+                    $category->images()->save($image);
+                } catch (\Exception $e) {
+                }
             }
         }
     }
@@ -60,8 +62,11 @@ class Category extends Model
 
         if ($fields['images'] != null) {
             foreach ($fields['images'] as $item) {
-                $image->uploadImage($item, 'categories');
-                $this->images()->save($image);
+                try {
+                    $image->uploadImage($item, 'categories');
+                    $this->images()->save($image);
+                } catch (\Exception $e) {
+                }
             }
         }
     }
