@@ -18,8 +18,6 @@ class CreateCredentialsTable extends Migration
             $table->string('name')->default('The Decor')->nullable();
             $table->string('brief')->nullable();
             $table->text('info')->nullable();
-            $table->string('email')->default('hello@thedecor.uz')->nullable();
-            $table->string('phone')->nullable();
             $table->string('facebook')->nullable();
             $table->string('instagram')->nullable();
             $table->string('telegram')->nullable();

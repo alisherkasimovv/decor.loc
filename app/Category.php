@@ -2,14 +2,18 @@
 
 namespace App;
 
+use Cviebrock\EloquentSluggable\Sluggable;
 use Illuminate\Database\Eloquent\Model;
 
 class Category extends Model
 {
+    use Sluggable;
+
     protected $fillable = [
         'name',
         'description',
-        'parent_id'
+        'parent_id',
+        'slug'
     ];
 
     /*
@@ -78,5 +82,19 @@ class Category extends Model
         } catch (\Exception $e) {
             echo $e;
         }
+    }
+
+    /**
+     * Return the sluggable configuration array for this model.
+     *
+     * @return array
+     */
+    public function sluggable()
+    {
+        return [
+            'slug' => [
+                'source' => 'name'
+            ]
+        ];
     }
 }

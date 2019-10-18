@@ -27,10 +27,6 @@
                             <dd><h2>{{ $credential->name }}</h2><br></dd>
                             <dt>Brief</dt>
                             <dd>{{ $credential->brief }}</dd><br>
-                            <dt>Phone</dt>
-                            <dd>{{ $credential->phone }}</dd><br>
-                            <dt>Email</dt>
-                            <dd>{{ $credential->email }}</dd><br>
                             <dt>Logo</dt>
                             <dd>
                                 @foreach($credential->images as $logo)

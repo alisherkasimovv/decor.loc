@@ -53,26 +53,6 @@
                         </div>
                     </div>
                     <div class="form-group">
-                        {{ Form::label('phone', 'Phone', array("class"=> "control-label")) }}
-                        <div class="input-group">
-                            <span class="input-group-addon"><i class="fa fa-phone"></i></span>
-                            {{ Form::text("phone",
-                                old("phone") ? old("phone") : (!empty($credential) ? $credential->phone : null),
-                                ["class" => "form-control", "id" => "phone", "placeholder" => "Phone"]
-                            ) }}
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        {{ Form::label('email', 'Email', array("class"=> "control-label")) }}
-                        <div class="input-group">
-                            <span class="input-group-addon"><i class="fa fa-at"></i></span>
-                            {{ Form::text("email",
-                                old("email") ? old("email") : (!empty($credential) ? $credential->email : null),
-                                ["class" => "form-control", "placeholder" => "Email"]
-                            ) }}
-                        </div>
-                    </div>
-                    <div class="form-group">
                         {{ Form::label('instagram', 'Instagram', array("class"=> "control-label")) }}
                         <div class="input-group">
                             <span class="input-group-addon"><i class="far fa-instagram"></i></span>

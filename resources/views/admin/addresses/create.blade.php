@@ -61,6 +61,13 @@
                             ) }}
                         </div>
                     </div>
+                    <div class="form-group">
+                        {{ Form::label('main_office', 'Select type of the office', array("class"=> "control-label")) }}
+                        <select class="form-control" id="main" name="main_office">
+                            <option value="0">Branch</option>
+                            <option value="1">Main office</option>
+                        </select>
+                    </div>
 
                 </div>
                 <!-- /.box-body -->
