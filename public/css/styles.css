@@ -34,3 +34,20 @@
 .image-preview {
     max-width: 30rem;
 }
+
+.image-thumb {
+    display: inline;
+    position: relative;
+    height: 10rem;
+    margin: 0;
+}
+
+.image-thumb img {
+    height: 10rem;
+}
+
+.image-thumb .image__deleter {
+    position: absolute;
+    float: top;
+    left: 0;
+}

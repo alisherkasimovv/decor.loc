@@ -22,8 +22,8 @@
                         <h3>Biz Bilan Bog`lanish</h3>
                         <div class="social-icons">
                             <a href="{{ $credential->facebook }}" class="fb"><i class="icon-facebook-1"></i></a>
-                            <a href="{{ $credential->instagram }}" class="tw"><i class="icon-instagram"></i></a>
-                            <a href="{{ $credential->telegram }}" class="gp"><i class="icon-paper-plane"></i></a>
+                            <a href="{{ $credential->instagram }}" class="gp"><i class="icon-instagram"></i></a>
+                            <a href="{{ $credential->telegram }}" class="tw"><i class="icon-paper-plane"></i></a>
                         </div>
                     </div>
                 </div>

@@ -15,9 +15,10 @@
   position: relative;
   left: 50%;
   top: 50%;
-  width: 150px;
+  /*transform: translate(-50%, -50%);*/
+  width: 400px;
   height: 150px;
-  margin: -75px 0 0 -75px;
+  margin: -150px 0 0 -150px;
   z-index: 1001;
       text-align: center;
 }

@@ -27,11 +27,13 @@
                             <dd><h2>{{ $credential->name }}</h2><br></dd>
                             <dt>Brief</dt>
                             <dd>{{ $credential->brief }}</dd><br>
+                            <dt>Information</dt>
+                            <dd>{{ $credential->info }}</dd><br>
                             <dt>Logo</dt>
                             <dd>
                                 @foreach($credential->images as $logo)
                                     <div class="col-xs-6">
-                                        <img src="{{ url('/') }}/{{ $logo->url }}" alt="{{ $logo->url }}">
+                                        <img src="{{ url('/') }}/{{ $logo->url }}" alt="{{ $logo->url }}" style="width: 200px;">
                                     </div>
                                 @endforeach
                             </dd>

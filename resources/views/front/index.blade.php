@@ -33,6 +33,7 @@
                     <div class="col-md-12">
                         <div class="main-heading" style="padding-top: 3rem">
                             <h4>Bizning</h4>
+                            <br>
                             <h1>Loyihalarimiz</h1>
                             <span>Bizning ajoyib va el yurtga hizmat qiluvchi Loyhalarimiza va mahsulotlarimiza</span>
                         </div>
@@ -90,6 +91,7 @@
                 <div class="col-md-12">
                     <div class="main-heading white" style="padding-top: 3rem">
                         <h4>Yaxshi So`zlar</h4>
+                            <br>
                         <h1>Klientlarimizdan</h1>
                     </div>
                 </div>
@@ -144,8 +146,8 @@
                                 <li style="font-size: 23px; background-color: goldenrod">The <br> Decor</li>
                             </ul>
 
-                            @foreach($categories as $cat)
-                                <div>
+                            <div>
+                                @foreach($categories as $cat)
                                     <div>
                                         <div class="row">
                                             <div class="col-md-6">
@@ -168,12 +170,12 @@
                                             </div>
                                         </div>
                                     </div>
-                                </div>
 
-                                @if($loop->index == 3)
-                                    @break
-                                @endif
-                            @endforeach
+                                    @if($loop->index == 3)
+                                        @break
+                                    @endif
+                                @endforeach
+                            </div>
                         </div>
                     </div>
                 </div>

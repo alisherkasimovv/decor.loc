@@ -90,8 +90,10 @@ class CategoriesController extends Controller
 
         if (!$request->has('images'))
             $request->request->add(['images' => null]);
+        if (!$request->has('oldImages'))
+            $request->request->add(['oldImages' => null]);
 
-        $category->update($request->all());
+        $category->edit($request->all());
         return redirect()->route('categories.index');
     }
 

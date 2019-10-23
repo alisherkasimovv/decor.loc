@@ -37,9 +37,14 @@
 
     <!--Project Mouse hover-->
     <link href="{{ asset("css/set1.css") }}" rel="stylesheet" type="text/css">
+    <link href="{{ asset("css/fancybox.css") }}" rel="stylesheet" type="text/css">
+    <link href="{{ asset("css/work2.css") }}" rel="stylesheet" type="text/css">
 
     <!--PreLoader-->
     <link href="{{ asset("css/loader.css") }}" rel="stylesheet" type="text/css">
+    
+    <link href="{{ asset("css/cubeportfolio.min.css") }}" rel="stylesheet" type="text/css">
 
 </head>
-<body>
+<body class="demo-juicy-projects">
+    <div id="wrap">

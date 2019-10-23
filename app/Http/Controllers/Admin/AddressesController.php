@@ -108,7 +108,7 @@ class AddressesController extends Controller
      */
     public function destroy($id)
     {
-        Member::find($id)->remove();
+        Address::find($id)->remove();
         return redirect()->route('addresses.index');
     }
 }

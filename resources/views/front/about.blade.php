@@ -61,6 +61,7 @@
                     <div class="col-md-12">
                         <div class="main-heading">
                             <h4 style="padding-top:3rem">Bizning Komandamiz</h4>
+                            <br>
                             <h1>thinker</h1>
                             <span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo, reprehenderit?</span>
                         </div>
@@ -121,6 +122,7 @@
                         <div class="col-md-12">
                             <div class="main-heading">
                                 <h4>Yaqin</h4>
+                            <br>
                                 <h1>Klientlar</h1>
                                 <span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repudiandae assumenda, dolor a corporis, explicabo ipsam!</span>
                             </div>

@@ -286,7 +286,7 @@ span.big-text{ font-size:54px; font-weight:300; text-transform:uppercase;}
 
 
 /*..... CLIENTS WORDS ......*/
-.clients-words{ background:url(/images/Background/2_5213315682812298863.JPG) no-repeat fixed; width: 100%; text-align: center; background-size:110%;}
+.clients-words{ background:url(../images/banners/bg_05.JPG) no-repeat fixed; width: 100%; text-align: center; background-size:110%;}
 .kind-words { margin:75px 0 0 0;}
 .kind-words p{ color:#fff; width: 75%; display: inline-block;}
 .kind-words span{font-family: 'Montserrat', sans-serif; font-size:18px; text-transform:uppercase; display:block; margin:10px 0 0 0;}

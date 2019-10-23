@@ -56,17 +56,11 @@ class Category extends Model
         $this->parent_id = $fields['parent_id'];
         $this->save();
 
-        $image = new Image();
-        if ($fields['oldImages'] != null) {
-            foreach ($fields['oldImages'] as $item) {
-                $image->removeImage($item);
-                $this->images()->delete();
-            }
-        }
-
         if ($fields['images'] != null) {
+
             foreach ($fields['images'] as $item) {
                 try {
+                    $image = new Image();
                     $image->uploadImage($item, 'categories');
                     $this->images()->save($image);
                 } catch (\Exception $e) {
@@ -82,6 +76,14 @@ class Category extends Model
         } catch (\Exception $e) {
             echo $e;
         }
+    }
+    
+    public function deleteImage($id)
+    {
+        $image = new Image();
+        $item = \DB::table('images')->where('id', $id)->first();
+        $image->removeImage($item->url);
+        \DB::table('images')->where('id', $id)->delete();
     }
 
     /**

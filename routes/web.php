@@ -22,11 +22,14 @@ Route::group([
     'middleware'=>'auth',
     'namespace'=>'Admin'], function()
     {
+        Route::get('/', ['as' => 'admin_home', 'uses' => 'CredentialController@index']);
         Route::resource('/credentials', 'CredentialController');
         Route::resource('/addresses', 'AddressesController');
         Route::resource('/categories', 'CategoriesController');
         Route::resource('/members', 'MembersController');
         Route::resource('/comments', 'CommentsController');
+//        Route::get('/delete-images', ['as' => 'deleteImages', 'uses' => 'ImagesHandler@deleteAllCategoryImages']);
+        Route::get('/categories/remove/{category}/{image}', 'ImagesHandler@removeImage');
     }
 );
 

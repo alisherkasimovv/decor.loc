@@ -26,6 +26,7 @@
                     <tr>
                         <th class="table-widths">#</th>
                         <th>Name</th>
+                        <th>Images</th>
                         <th class="table-widths">Edit</th>
                         <th class="table-widths">Delete</th>
                     </tr>
@@ -34,6 +35,16 @@
                         <tr>
                             <td>{{ $category->id }}</td>
                             <td>{{ $category->name }}</td>
+                            <td>
+                                @foreach($category->images as $image)
+                                    <div class="image-thumb">
+                                        <img src="{{ url('/') }}/{{ $image->url }}">
+                                        <a href="{{ url('admin/categories/remove') }}/{{ $category->id }}/{{ $image->id }}" class="image__deleter">
+                                            <span class="fa fa-times-circle"></span>
+                                        </a>
+                                    </div>
+                                @endforeach
+                            </td>
                             <td>
                                 <a href="{{route('categories.edit', $category)}}" class="btn btn-block btn-primary btn-sm">
                                     <span class="fa fa-edit"></span>

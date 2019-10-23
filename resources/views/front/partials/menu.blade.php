@@ -1,9 +1,7 @@
-<div id="wrap">
-
     <!-- LOADER -->
     <div id="loader-wrapper" style="text-align:center">
         @foreach($credential->images as $image)
-            <div id="loader"><img src="{{ $image->url }}" alt="{{ $credential->name }}"><span>Yuklanish...</span></div>
+            <div id="loader"><img src="{{ url('/') }}/{{ $image->url }}" alt="{{ $credential->name }}"><span>Yuklanish...</span></div>
             @break
         @endforeach
         <!--/#loader-->
@@ -56,7 +54,7 @@
 
                         <div class="logo">
                             @foreach($credential->images as $image)
-                                <a href="{{ url("/") }}"><img src="{{ $image->url }}" alt=""></a>
+                                <a href="{{ url("/") }}"><img src="{{ url('/') }}/{{ $image->url }}" alt=""></a>
                                 @break
                             @endforeach
                         </div>
@@ -64,10 +62,10 @@
                         <div class="navigation">
 
                             <ul>
-                                <li class="{{ Request::is('/') ? 'select' : '' }}"><a href="{{ url("/") }}">Bosh Sahifa</a></li>
-                                <li class="{{ Request::is('/categories') ? 'select' : '' }}"><a href="{{ route('categories') }}">Xizmatlarimiz</a></li>
-                                <li class="{{ Request::is('/about-us') ? 'select' : '' }}"><a href="{{ route('about-us') }}">Biz Xaqimizda</a></li>
-                                <li class="{{ Request::is('/contacts') ? 'select' : '' }}"><a href="{{ route('contacts') }}">Kontaktlar</a></li>
+                                <li class="{{ (request()->is('/')) ? 'select' : '' }}"><a href="{{ url("/") }}">Bosh Sahifa</a></li>
+                                <li class="{{ (request()->is('categories*')) ? 'select' : '' }}"><a href="{{ route('categories') }}">Xizmatlarimiz</a></li>
+                                <li class="{{ (request()->is('about-us')) ? 'select' : '' }}"><a href="{{ route('about-us') }}">Biz haqimizda</a></li>
+                                <li class="{{ (request()->is('contacts')) ? 'select' : '' }}"><a href="{{ route('contacts') }}">Kontaktlar</a></li>
                             </ul>
 
                         </div>
@@ -91,16 +89,16 @@
                     <div class="col-md-12">
 
                         <div class="logo">
-                            <a href="#."><img src="thedecor.png" alt=""></a>
+                            <a href="{{ url("/") }}"><img src="{{ url('/') }}/{{ $image->url }}" alt=""></a>
                         </div>
 
                         <div class="navigation">
 
                             <ul>
-                                <li class="{{ Request::is('/') ? 'select' : '' }}"><a href="{{ url("/") }}">Bosh Sahifa</a></li>
-                                <li class="{{ Request::is('/categories') ? 'select' : '' }}"><a href="{{ route('categories') }}">Xizmatlarimiz</a></li>
-                                <li class="{{ Request::is('/about-us') ? 'select' : '' }}"><a href="{{ route('about-us') }}">Biz Xaqimizda</a></li>
-                                <li class="{{ Request::is('/contacts') ? 'select' : '' }}"><a href="{{ route('contacts') }}">Kontaktlar</a></li>
+                                <li class="{{ (request()->is('/')) ? 'select' : '' }}"><a href="{{ url("/") }}">Bosh Sahifa</a></li>
+                                <li class="{{ (request()->is('categories*')) ? 'select' : '' }}"><a href="{{ route('categories') }}">Xizmatlarimiz</a></li>
+                                <li class="{{ (request()->is('about-us')) ? 'select' : '' }}"><a href="{{ route('about-us') }}">Biz haqimizda</a></li>
+                                <li class="{{ (request()->is('contacts')) ? 'select' : '' }}"><a href="{{ route('contacts') }}">Kontaktlar</a></li>
                             </ul>
 
                         </div>

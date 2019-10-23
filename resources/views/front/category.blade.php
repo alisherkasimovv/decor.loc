@@ -8,6 +8,7 @@
         <div class="container">
             <div class="text-detail">
                 <h2>{{ $category->name }} mahsulotlar</h2>
+                            <br>
                 <p>{{ $category->description }}</p>
                 <ul>
                     <li><a href="{{ url("/") }}">Bosh Sahifa</a> <span>/</span></li>
@@ -33,17 +34,13 @@
                     <div class="col-md-4">
                         <div class="work">
                             <div class="grid">
-
                                 <figure class="effect-sadie">
-                                    <img src="{{ $image->url }}" alt="" height="296">
-
+                                    <img src="{{ url('/') }}/{{ $image->url }}" alt="" height="296">
                                     <figcaption>
                                         <h2><img src="{{ asset("images/plus.png") }}" alt=""></h2>
-                                        <a class="fancybox-buttons" data-fancybox-group="button" href="{{ $image->url }}"></a>
+                                        <a class="fancybox-buttons" data-fancybox-group="button" href="{{ url('/') }}/{{ $image->url }}"></a>
                                     </figcaption>
-
                                 </figure>
-
                             </div>
                         </div>
                     </div>
@@ -51,8 +48,7 @@
                 </div>
             </div>
         </section>
-
-
+        
     </div>
     <!-- END CONTENT -->
 @endsection
