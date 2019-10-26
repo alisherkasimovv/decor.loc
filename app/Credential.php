@@ -32,8 +32,6 @@ class Credential extends Model
         $credential->name = $fields['name'];
         $credential->brief = $fields['brief'];
         $credential->info = $fields['info'];
-        $credential->email = $fields['email'];
-        $credential->phone = $fields['phone'];
         $credential->facebook = $fields['facebook'];
         $credential->instagram = $fields['instagram'];
         $credential->telegram = $fields['telegram'];
@@ -57,23 +55,19 @@ class Credential extends Model
         $this->name = $fields['name'];
         $this->brief = $fields['brief'];
         $this->info = $fields['info'];
-        $this->email = $fields['email'];
-        $this->phone = $fields['phone'];
         $this->facebook = $fields['facebook'];
         $this->instagram = $fields['instagram'];
         $this->telegram = $fields['telegram'];
         $this->save();
 
         $image = new Image();
-        if ($fields['oldLogo'] != null)
-        {
-            $image->removeImage($fields['oldLogo']);
-            $this->images()->delete();
-        }
 
         if ($fields['logo'] != null)
         {
             try {
+                $image->removeImage($fields['oldLogo']);
+                $this->images()->delete();
+                
                 $image->uploadImage($fields['logo'], 'credentials');
             } catch (\Exception $e) {
                 echo $e;

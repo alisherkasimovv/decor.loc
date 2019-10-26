@@ -63,7 +63,7 @@
                             <h4 style="padding-top:3rem">Bizning Komandamiz</h4>
                             <br>
                             <h1>thinker</h1>
-                            <span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo, reprehenderit?</span>
+                            <span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo reprehenderit?</span>
                         </div>
                     </div>
 

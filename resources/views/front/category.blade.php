@@ -11,7 +11,7 @@
                             <br>
                 <p>{{ $category->description }}</p>
                 <ul>
-                    <li><a href="{{ url("/") }}">Bosh Sahifa</a> <span>/</span></li>
+                    <li><a href="{{ url("/") }}">Bosh sahifa</a> <span>/</span></li>
                     <li><a href="{{ route("categories") }}">Hizmatlarimiz</a> <span>/</span></li>
                     <li class="item-select"><a>{{ $category->name }}</a></li>
                 </ul>

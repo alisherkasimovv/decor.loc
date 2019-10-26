@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Address;
+use App\Banner;
 use App\Category;
 use App\Comment;
 use App\Credential;
@@ -18,7 +19,8 @@ class HomeController extends Controller
                 'credential' => Credential::where('id', 1)->firstOrFail(),
                 'categories' => Category::where('parent_id', 0)->orderBy('id', 'desc')->paginate(4),
                 'comments'   => Comment::orderBy('id', 'desc')->get(),
-                'address'    => Address::where('main_office', 1)->firstOrFail()
+                'address'    => Address::where('main_office', 1)->firstOrFail(),
+                'banners'    => Banner::orderBy('id', 'desc')->get()
             ]
         );
     }
@@ -30,7 +32,8 @@ class HomeController extends Controller
             [
                 'credential' => Credential::where('id', 1)->firstOrFail(),
                 'members'    => Member::orderBy('id', 'desc')->get(),
-                'address'    => Address::where('main_office', 1)->firstOrFail()
+                'address'    => Address::where('main_office', 1)->firstOrFail(),
+                'banners'    => Banner::orderBy('id', 'desc')->get()
             ]
         );
     }
@@ -44,6 +47,7 @@ class HomeController extends Controller
                 'addresses'  => Address::orderBy('id', 'desc')->get(),
                 'address'    => Address::where('main_office', 1)->firstOrFail(),
                 'branches'   => Address::where('main_office', 0)->get(),
+                'banners'    => Banner::orderBy('id', 'desc')->get()
             ]
         );
     }
@@ -57,7 +61,8 @@ class HomeController extends Controller
             [
                 'credential' => Credential::where('id', 1)->firstOrFail(),
                 'categories' => $categories,
-                'address'    => Address::where('main_office', 1)->firstOrFail()
+                'address'    => Address::where('main_office', 1)->firstOrFail(),
+                'banners'    => Banner::orderBy('id', 'desc')->get()
             ]
         );
     }
@@ -69,7 +74,8 @@ class HomeController extends Controller
             [
                 'credential' => Credential::where('id', 1)->firstOrFail(),
                 'address'    => Address::where('main_office', 1)->firstOrFail(),
-                'category'   => Category::where('slug', $slug)->firstOrFail()
+                'category'   => Category::where('slug', $slug)->firstOrFail(),
+                'banners'    => Banner::orderBy('id', 'desc')->get()
             ]
         );
     }

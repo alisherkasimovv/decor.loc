@@ -159,6 +159,11 @@ return [
             'url'         => 'admin/addresses',
             'icon'        => 'far fa-file'
         ],
+        [
+            'text'        => 'Banners',
+            'url'         => 'admin/banners',
+            'icon'        => 'far fa-file'
+        ],
     ],
 
     /*

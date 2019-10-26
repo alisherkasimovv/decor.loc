@@ -52,9 +52,11 @@ class CredentialController extends Controller
     public function update(Request $request, Credential $credential)
     {
         $this->validate($request, [
-            'name'   => 'required',
-            'logo'   => 'required|mimes:jpeg,png,jpg,gif,svg|max:2048'
+            'name'   => 'required'
         ]);
+        
+        if (!$request->has('logo'))
+            $request->request->add(['logo' => null]);
 
         $credential->edit($request->all());
         return redirect()->route('credentials.index');

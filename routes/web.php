@@ -17,6 +17,9 @@ Route::get('/contacts', ['as' => 'contacts', 'uses' => 'HomeController@contacts'
 Route::get('/categories', ['as'=> 'categories', 'uses' => 'HomeController@categories']);
 Route::get('/categories/{slug}', ['as' => 'category', 'uses' => 'HomeController@category']);
 
+// e-mail feedback
+Route::post('/send-email', 'ContactFormController@store')->name('contact.store');
+
 Route::group([
     'prefix'=>'admin',
     'middleware'=>'auth',
@@ -28,6 +31,7 @@ Route::group([
         Route::resource('/categories', 'CategoriesController');
         Route::resource('/members', 'MembersController');
         Route::resource('/comments', 'CommentsController');
+        Route::resource('/banners', 'BannersController');
 //        Route::get('/delete-images', ['as' => 'deleteImages', 'uses' => 'ImagesHandler@deleteAllCategoryImages']);
         Route::get('/categories/remove/{category}/{image}', 'ImagesHandler@removeImage');
     }

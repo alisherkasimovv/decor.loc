@@ -26,7 +26,7 @@
                         {{ Form::label('name', 'Company name', array("class"=> "control-label")) }}
                         <div class="input-group">
                             <span class="input-group-addon"><i class="fa fa-map-pin"></i></span>
-                            {{ Form::text("city",
+                            {{ Form::text("name",
                                 old("name") ? old("name") : (!empty($credential) ? $credential->name : null),
                                 ["class" => "form-control", "placeholder" => "Name"]
                             ) }}
@@ -100,7 +100,7 @@
                 <div class="box-body">
                     Old logo<br>
                     @foreach($credential->images as $logo)
-                        <img src="{{ url('/') }}/{{ $image->url }}" style="height: 100px !important;" alt="">
+                        <img src="{{ url('/') }}/{{ $logo->url }}" style="height: 100px !important;" alt="">
                         <input type="hidden" name="oldLogo" value="{{ $logo->url }}">
                     @endforeach
                     <br>

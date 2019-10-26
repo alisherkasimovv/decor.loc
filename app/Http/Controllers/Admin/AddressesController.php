@@ -96,7 +96,7 @@ class AddressesController extends Controller
             'address' => 'required'
         ]);
 
-        $address->update($request->all());
+        $address->edit($request->all());
         return redirect()->route('addresses.index');
     }
 
