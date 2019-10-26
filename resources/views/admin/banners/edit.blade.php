@@ -33,6 +33,19 @@
                             ) }}
                         </div>
                     </div>
+                    <div class="form-group">
+                        {{ Form::label('type', 'Select type of the office', array("class"=> "control-label")) }}
+                        <select class="form-control" id="type" name="type">
+                            <option value="0"
+                                @if (0 == old('type', $banner->type))
+                                selected="selected"
+                                @endif>Picture will be used as banner</option>
+                            <option value="1"
+                                @if (1 == old('type', $banner->type))
+                                selected="selected"
+                                @endif>Picture will be used on "Contact us" page</option>
+                        </select>
+                    </div>
                     <br><br>
                     Old images <br>
                     @foreach($banner->images as $image)

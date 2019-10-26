@@ -21,6 +21,9 @@ class CreateCredentialsTable extends Migration
             $table->string('facebook')->nullable();
             $table->string('instagram')->nullable();
             $table->string('telegram')->nullable();
+            $table->integer('finished')->default(0);
+            $table->integer('happy')->default(0);
+            $table->integer('hours')->default(0);
             $table->timestamps();
         });
     }

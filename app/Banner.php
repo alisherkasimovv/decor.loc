@@ -24,6 +24,7 @@ class Banner extends Model
         $banner = new static();
 
         $banner->name = $fields['name'];
+        $banner->type = $fields['type'];
         $banner->save();
 
         $image = new Image();
@@ -38,6 +39,7 @@ class Banner extends Model
 
     public function edit($fields) {
         $this->name = $fields['name'];
+        $this->type = $fields['type'];
         $this->save();
 
         if ($fields['image'] != null) {

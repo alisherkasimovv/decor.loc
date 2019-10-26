@@ -14,7 +14,10 @@ class Credential extends Model
         'phone',
         'facebook',
         'instagram',
-        'telegram'
+        'telegram',
+        'finished',
+        'happy',
+        'hours',
     ];
 
     /*
@@ -35,6 +38,9 @@ class Credential extends Model
         $credential->facebook = $fields['facebook'];
         $credential->instagram = $fields['instagram'];
         $credential->telegram = $fields['telegram'];
+        $credential->finished = $fields['finished'];
+        $credential->happy = $fields['happy'];
+        $credential->hours = $fields['hours'];
         $credential->save();
 
         if ($fields['logo'] != null)
@@ -58,6 +64,9 @@ class Credential extends Model
         $this->facebook = $fields['facebook'];
         $this->instagram = $fields['instagram'];
         $this->telegram = $fields['telegram'];
+        $this->finished = $fields['finished'];
+        $this->happy = $fields['happy'];
+        $this->hours = $fields['hours'];
         $this->save();
 
         $image = new Image();

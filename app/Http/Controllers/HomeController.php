@@ -20,7 +20,7 @@ class HomeController extends Controller
                 'categories' => Category::where('parent_id', 0)->orderBy('id', 'desc')->paginate(4),
                 'comments'   => Comment::orderBy('id', 'desc')->get(),
                 'address'    => Address::where('main_office', 1)->firstOrFail(),
-                'banners'    => Banner::orderBy('id', 'desc')->get()
+                'banners'    => Banner::where('type', 0)->orderBy('id', 'desc')->get()
             ]
         );
     }
@@ -33,7 +33,8 @@ class HomeController extends Controller
                 'credential' => Credential::where('id', 1)->firstOrFail(),
                 'members'    => Member::orderBy('id', 'desc')->get(),
                 'address'    => Address::where('main_office', 1)->firstOrFail(),
-                'banners'    => Banner::orderBy('id', 'desc')->get()
+                'banners'    => Banner::where('type', 0)->orderBy('id', 'desc')->get(),
+                'mini'       => Banner::where('type', 1)->orderBy('id', 'desc')->paginate(5)
             ]
         );
     }
@@ -47,22 +48,20 @@ class HomeController extends Controller
                 'addresses'  => Address::orderBy('id', 'desc')->get(),
                 'address'    => Address::where('main_office', 1)->firstOrFail(),
                 'branches'   => Address::where('main_office', 0)->get(),
-                'banners'    => Banner::orderBy('id', 'desc')->get()
+                'banners'    => Banner::where('type', 0)->orderBy('id', 'desc')->get()
             ]
         );
     }
 
     public function categories()
     {
-        $categories = Category::where('parent_id', 0)->orderBy('id', 'desc')->paginate(9);
-        $categories->withPath('categories/load-new');
         return view(
             'front.categories',
             [
                 'credential' => Credential::where('id', 1)->firstOrFail(),
-                'categories' => $categories,
+                'categories' => Category::where('parent_id', 0)->orderBy('id', 'desc')->get(),
                 'address'    => Address::where('main_office', 1)->firstOrFail(),
-                'banners'    => Banner::orderBy('id', 'desc')->get()
+                'banners'    => Banner::where('type', 0)->orderBy('id', 'desc')->get()
             ]
         );
     }
@@ -75,7 +74,7 @@ class HomeController extends Controller
                 'credential' => Credential::where('id', 1)->firstOrFail(),
                 'address'    => Address::where('main_office', 1)->firstOrFail(),
                 'category'   => Category::where('slug', $slug)->firstOrFail(),
-                'banners'    => Banner::orderBy('id', 'desc')->get()
+                'banners'    => Banner::where('type', 0)->orderBy('id', 'desc')->get()
             ]
         );
     }

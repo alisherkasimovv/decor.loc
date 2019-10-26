@@ -52,3 +52,7 @@
     </div>
     <!-- END CONTENT -->
 @endsection
+
+@section('styles')
+    <link href="{{ asset("css/work2.css") }}" rel="stylesheet" type="text/css">
+@stop

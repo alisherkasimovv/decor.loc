@@ -18,10 +18,11 @@
                         <div class="col-md-12">
                             <div id="about-slide" class="owl-carousel owl-theme">
 
-                                <div class="item"><img src="images/about-img1.jpg" alt=""></div>
-                                <div class="item"><img src="images/about-img2.jpg" alt=""></div>
-                                <div class="item"><img src="images/about-img3.jpg" alt=""></div>
-
+                                @foreach($mini as $item)
+                                    @foreach($item->images as $img)
+                                        <div class="item"><img src="{{ $img->url }}" alt=""></div>
+                                    @endforeach
+                                @endforeach
                             </div>
                         </div>
 
@@ -52,6 +53,56 @@
             </div>
         </section>
         <!-- END ABOUT US -->
+
+        <!-- START FUN FACTS -->
+        <section>
+            <div class="container">
+
+                <div class="row">
+                    <div class="fun-facts">
+
+                        <div class="col-md-3">
+                            <img src="{{ asset('images/big-wave.png') }}" alt="">
+                        </div>
+
+
+                        <div class="fun-facts-detail">
+                            <div class="col-md-3">
+
+                                <div>
+                                    <span class="counter">{{ $credential->finished }}</span>
+                                    <span>Finished projects</span>
+                                </div>
+
+                            </div>
+
+                            <div class="col-md-3">
+
+                                <div>
+                                    <span class="counter">{{ $credential->happy }}</span>
+                                    <span>Happy Customers</span>
+
+                                </div>
+
+                            </div>
+
+                            <div class="col-md-3">
+
+                                <div>
+                                    <span class="counter">{{ $credential->hours }}</span>
+                                    <span>Working Hours</span>
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <div class="clear"></div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+        <!-- END FUN FACTS -->
         <!-- START TEAM -->
         <section class="sec-space">
             <div class="container">
@@ -70,38 +121,38 @@
                     <div class="our-team">
 
                         @foreach($members as $member)
-                        <div class="col-md-4">
-                            <div class="team">
-                                @foreach($member->images as $image)
-                                    <img src="{{ $image->url }}" alt="">
-                                    @break
-                                @endforeach
-                                <div class="detail">
+                            <div class="col-md-4">
+                                <div class="team">
+                                    @foreach($member->images as $image)
+                                        <img src="{{ $image->url }}" alt="">
+                                        @break
+                                    @endforeach
+                                    <div class="detail">
 
-                                    <div class="name">
-                                        <h5>{{ $member->name }}</h5>
-                                        <span>{{ $member->position }}</span>
+                                        <div class="name">
+                                            <h5>{{ $member->name }}</h5>
+                                            <span>{{ $member->position }}</span>
+                                        </div>
+
+                                        <div class="social-icons">
+                                            @if($member->instagram != null)
+                                                <a href="{{ $member->instagram }}"><i class="icon-instagram"></i></a>
+                                            @endif
+                                            @if($member->telegram != null)
+                                                <a href="{{ $member->telegram }}"><i class="icon-telegram"></i></a>
+                                            @endif
+                                            @if($member->facebook != null)
+                                                <a href="{{ $member->facebook}}"><i class="icon-facebook"></i></a>
+                                            @endif
+                                            <a href="tel: {{ $member->phone }}"><i class="icon-phone"></i></a>
+                                        </div>
+
+                                        <p>{{ $member->info }}</p>
+
                                     </div>
-
-                                    <div class="social-icons">
-                                        @if($member->instagram != null)
-                                            <a href="{{ $member->instagram }}"><i class="icon-instagram"></i></a>
-                                        @endif
-                                        @if($member->telegram != null)
-                                            <a href="{{ $member->telegram }}"><i class="icon-telegram"></i></a>
-                                        @endif
-                                        @if($member->facebook != null)
-                                            <a href="{{ $member->facebook}}"><i class="icon-facebook"></i></a>
-                                        @endif
-                                        <a href="tel: {{ $member->phone }}"><i class="icon-phone"></i></a>
-                                    </div>
-
-                                    <p>{{ $member->info }}</p>
 
                                 </div>
-
                             </div>
-                        </div>
                         @endforeach
 
                         <div class="clear"></div>
@@ -112,6 +163,7 @@
             </div>
         </section>
         <!-- END TEAM -->
+
         <!-- START CLIENTS -->
         <section class="sec-space gray-bg">
             <div class="container">
@@ -122,7 +174,7 @@
                         <div class="col-md-12">
                             <div class="main-heading">
                                 <h4>Yaqin</h4>
-                            <br>
+                                <br>
                                 <h1>Klientlar</h1>
                                 <span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repudiandae assumenda, dolor a corporis, explicabo ipsam!</span>
                             </div>
@@ -144,4 +196,18 @@
     </div>
     <!-- END CONTENT -->
 
+@endsection
+
+@section('js')
+    <!-- Custom -->
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/waypoints/2.0.3/waypoints.min.js"></script>
+    <script type="text/javascript" src="{{ asset('js/counter.js') }}"></script>
+    <script>
+        jQuery(document).ready(function( $ ) {
+            $('.counter').counterUp({
+                delay: 10,
+                time: 1000
+            });
+        });
+    </script>
 @endsection

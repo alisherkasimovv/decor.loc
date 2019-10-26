@@ -19,37 +19,36 @@
 <!-- OWL CAROUSEL -->
 <script type="text/javascript" src="{{ asset("js/owl.carousel.js") }}"></script>
 
+<script type="text/javascript" src="{{ asset("js/fancybox.js") }}"></script>
+
 <!-- CUBE PORTFOLIO -->
 <script type="text/javascript" src="{{ asset("js/jquery.cubeportfolio.min.js") }}"></script>
 <script type="text/javascript" src="{{ asset("js/main.portfolio.js") }}"></script>
-
 <!-- CUSTOM -->
 <script type="text/javascript" src="{{ asset("js/custom.js") }}"></script>
-
-<script type="text/javascript" src="{{ asset("js/fancybox.js") }}"></script>
 
 <script type="text/javascript">
     $(document).ready(function() {
         /*
         *  Button helper. Disable animations, hide close button, change title type and content
         */
-        
+
         $('.fancybox-buttons').fancybox({
             openEffect: 'none',
             closeEffect: 'none',
-            
+
             prevEffect: 'none',
             nextEffect: 'none',
-            
+
             closeBtn: false,
-            
+
             helpers: {
                 title: {
                     type: 'inside'
                 },
                 buttons: {}
             },
-            
+
             afterLoad: function() {
             this.title = 'Rasm ' + (this.index + 1) + '/' + this.group.length + (this.title ? ' - ' + this.title : '');
             }

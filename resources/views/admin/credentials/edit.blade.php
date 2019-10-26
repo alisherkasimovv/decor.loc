@@ -52,6 +52,8 @@
                             ) }}
                         </div>
                     </div>
+
+                    <h3>Social networks</h3>
                     <div class="form-group">
                         {{ Form::label('instagram', 'Instagram', array("class"=> "control-label")) }}
                         <div class="input-group">
@@ -79,6 +81,39 @@
                             {{ Form::text("telegram",
                                 old("telegram") ? old("telegram") : (!empty($credential) ? $credential->telegram : null),
                                 ["class" => "form-control", "placeholder" => "Telegram"]
+                            ) }}
+                        </div>
+                    </div>
+
+                    <h3>Fun facts section</h3>
+
+                    <div class="form-group">
+                        {{ Form::label('finished', 'Finished works', array("class"=> "control-label")) }}
+                        <div class="input-group">
+                            <span class="input-group-addon"><i class="fa fa-times"></i></span>
+                            {{ Form::text("finished",
+                                old("finished") ? old("finished") : (!empty($credential) ? $credential->finished : null),
+                                ["class" => "form-control", "placeholder" => "Finished works"]
+                            ) }}
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        {{ Form::label('happy', 'Happy customers', array("class"=> "control-label")) }}
+                        <div class="input-group">
+                            <span class="input-group-addon"><i class="fa fa-user"></i></span>
+                            {{ Form::text("happy",
+                                old("happy") ? old("happy") : (!empty($credential) ? $credential->happy : null),
+                                ["class" => "form-control", "placeholder" => "Happy customers"]
+                            ) }}
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        {{ Form::label('hours', 'Spent hours', array("class"=> "control-label")) }}
+                        <div class="input-group">
+                            <span class="input-group-addon"><i class="fa fa-calendar-times"></i></span>
+                            {{ Form::text("hours",
+                                old("hours") ? old("hours") : (!empty($credential) ? $credential->hours : null),
+                                ["class" => "form-control", "placeholder" => "Spent hours"]
                             ) }}
                         </div>
                     </div>

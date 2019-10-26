@@ -41,7 +41,7 @@
                         <div class="row">
                             @foreach($branches as $branch)
                                 <div class="col-md-6">
-                                    <h5>{{ $branch->city }}dagi o`fis</h5>
+                                    <br><br>
                                     <div class="detail">
                                         <span><strong>Telefon:</strong> {{ $branch->phone }}</span><br>
                                         <span><strong>E-mail:</strong> {{ $branch->email }}</span><br>

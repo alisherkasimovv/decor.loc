@@ -64,9 +64,15 @@
                     </div>
                     <div class="form-group">
                         {{ Form::label('main_office', 'Select type of the office', array("class"=> "control-label")) }}
-                        <select class="form-control" id="main" name="main">
-                            <option value="0">Branch</option>
-                            <option value="1">Main office</option>
+                        <select class="form-control" id="main_office" name="main_office">
+                            <option value="0"
+                                    @if (0 == old('main_office', $address->main_office))
+                                    selected="selected"
+                                    @endif>Branch</option>
+                            <option value="1"
+                                    @if (1 == old('main_office', $address->main_office))
+                                    selected="selected"
+                                    @endif>Main office</option>
                         </select>
                     </div>
 

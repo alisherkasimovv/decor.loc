@@ -32,6 +32,13 @@
                             ) }}
                         </div>
                     </div>
+                    <div class="form-group">
+                        {{ Form::label('type', 'Select type of the office', array("class"=> "control-label")) }}
+                        <select class="form-control" id="type" name="type">
+                            <option value="0" selected="selected">Picture will be used as banner</option>
+                            <option value="1">Picture will be used on "Contact us" page</option>
+                        </select>
+                    </div>
 
                     <div class="form-group">
                         {{ Form::label('image', 'Image', array("class"=> "control-label")) }}
